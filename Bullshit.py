@@ -1,12 +1,13 @@
 import json, random
 
 '''
-原始作者
+唬爛產生器原始作者
 Bill Hsu (徐子修)
 https://github.com/StillFantastic/bullshit
 
-改寫作者
+Python 版本作者
 Darren Yang (楊德倫)
+https://github.com/telunyang/python_bullshit_generator
 '''
 
 # 唬爛類別
@@ -50,9 +51,6 @@ class Bullshit:
         list_bullshit = self.dict_data['bullshit']
         random.shuffle(list_bullshit)     
 
-        # 縮排文字
-        str_indent = " " * 4
-
         # 生成文字資料
         str_gen = ''
         
@@ -64,7 +62,7 @@ class Bullshit:
             # 根據整數亂數來決定生成的方向
             if int_rand < 5 and self.isEnd(str_gen):
                 # 建立新段落
-                str_gen += "\n\n" + str_indent
+                str_gen += "\n\n"
 
             elif int_rand < 27:
                 # 倘若可用的名人語錄都被拿光了，則結束生成，跳出迴圈
@@ -107,8 +105,12 @@ class Bullshit:
                 # 合併生成字串
                 str_gen += sentence_bullshit
 
-            # 每次生成句子，都要計算生成字數
+            # 每次生成句子，都要重新計算生成字數
             min_length = len(str_gen)
 
-        # 縮排後再回傳
-        return str_indent + str_gen
+        # 如果發現生成的句子當中，完全沒有自訂主題，則重新生成
+        if param_topic not in str_gen:
+            return self.generate(param_topic, param_min_length)
+        
+        # 回傳結果
+        return str_gen

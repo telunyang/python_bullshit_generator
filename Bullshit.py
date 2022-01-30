@@ -20,8 +20,8 @@ class Bullshit:
     
     # 判斷目前句子是否結束
     def isEnd(self, str):
-        list_end_symbol = ["。", "？", "！", "?", "!"]
-        if any( str[len(str)-1] in symbol for symbol in list_end_symbol ):
+        str_end_symbols = "。？！?!"
+        if str[-1] in str_end_symbols:
             return True
         return False
 
@@ -70,10 +70,7 @@ class Bullshit:
                     break
 
                 # 取得隨機排序後的名人語錄第 1 句
-                sentence_famous = list_famous[0]
-
-                # 沒被取得、剩下的語錄，重新初始化
-                list_famous = list_famous[1:]
+                sentence_famous = list_famous.pop(0)
 
                 # 「曾說過、曾講過」之類的詞，用來取代名人語錄當中的 a 字元
                 str_before = self.dict_data['before'][ random.randint(0, len(self.dict_data['before']) - 1 ) ]
@@ -94,10 +91,7 @@ class Bullshit:
                     break
 
                 # 取得隨機排序後的唬爛語錄第 1 句
-                sentence_bullshit = list_bullshit[0]
-
-                # 沒被取得、剩下的語錄，重新初始化
-                list_bullshit = list_bullshit[1:]
+                sentence_bullshit = list_bullshit.pop(0)
 
                 # 取代唬爛語錄當中的 x 字元
                 sentence_bullshit = sentence_bullshit.replace("x", param_topic)

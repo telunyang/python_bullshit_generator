@@ -20,8 +20,7 @@ class Bullshit:
     
     # 判斷目前句子是否結束
     def isEnd(self, str):
-        str_end_symbols = "。？！?!"
-        if str[-1] in str_end_symbols:
+        if str[-1] in "。？！?!":
             return True
         return False
 
@@ -58,6 +57,13 @@ class Bullshit:
         while min_length < param_min_length:
             # 取得整數亂數，藉以決定建立新段落、產生名人語錄，還是唬爛語錄
             int_rand = random.randint(0, 99)
+
+            '''
+            int_rand 範圍:
+            0 - 5 且 文字資料是句號、問號等作為結尾: 建立新段落
+            0 - 27: 使用名人語錄
+            28 - 99: 使用唬爛語錄
+            '''
 
             # 根據整數亂數來決定生成的方向
             if int_rand < 5 and self.isEnd(str_gen):

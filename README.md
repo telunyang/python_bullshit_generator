@@ -1,12 +1,11 @@
 # 唬爛產生器 Python 版
 
 ## 重要說明
-1. 唬爛產生器由作者 **徐子修 Bill Hsu** 原創：
-  - 可透過 [Bullshit generator](https://github.com/StillFantastic/bullshit "唬爛產生器") 來預覽或下載使用。
-  - 亦可到 [demo](https://howtobullshit.me/ "線上展示") 進行線上操作。
-  - 以上連結皆由 Bill Hsu 提供。
-2. 原始程式以 Go 語言進行撰寫，本人將其改為 Python 版本。
-3. Python 版本若有不足之處，歡迎討論與分享。
+1. 2019 年 menzi11 建立了 [BullshitGenerator](https://github.com/menzi11/BullshitGenerator "BullshitGenerator") 專案，使用 Python 開發，函式名稱全用簡體中文來命名，與一般命名慣例有別。
+2. 2020 年 StillFantastic 建立了 [Bullshit generator](https://github.com/StillFantastic/bullshit "唬爛產生器")，使用了 2019 年版本當中的 data.json，轉成正體中文，再改寫成 go 語言版本，並提供 Web API 存取生成結果。
+  - 正體中文唬爛產生器由作者 **徐子修 Bill Hsu** 原創：
+  - 可到 [demo](https://howtobullshit.me/ "線上展示") 進行線上操作。
+3. 2020 年版本的原始程式，是以 Go 語言進行撰寫，本人將其改為 Python 版本，並加以模組化；若有不足之處，歡迎討論與分享。
 
 ## 檔案下載
 1. 請先行下載原作者的語錄資料: [下載 data.json](https://raw.githubusercontent.com/StillFantastic/bullshit/master/generator/data.json "data.json")

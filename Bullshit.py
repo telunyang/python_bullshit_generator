@@ -20,7 +20,7 @@ class Bullshit:
     
     # 判斷目前句子是否結束
     def isEnd(self, str):
-        if str[-1] in "。？！?!":
+        if str != '' and str[-1] in "。？！?!":
             return True
         return False
 
